@@ -28,7 +28,7 @@
 <div>
 	<h1>All Songs</h1>
 	<h3>Once any song has been added to an album, you can play,favourite and delete by using "Song" feature provided in the navigation bar</h3>
-	<img src="screenshot/allsong.png">
+	<img src="screenshot/allsongs.png">
 </div>
 
 <div>
