@@ -15,7 +15,7 @@
 
 <div>
 	<h1>Detail View</h1>
-	<h3>You will be redirected to detail page after creating any album where you get details about the album.<br>Delete,Update album ,and add new song are the key feature available on detial page.</h3>
+	<h3>You will be redirected to detail page after creating any album where you get details about the album.<br>"Delete","Update" album ,and "Add New Song" are the key feature available on this page.</h3>
 	<img src="screenshot/details.png">
 </div>
 
