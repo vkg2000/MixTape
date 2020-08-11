@@ -5,6 +5,6 @@
 <div>
 	<h1>Homepage</h1>
 	<img src="screenshot/homepage1.png"> 
-	<img src="screenshot/homepage2.png"> 
+	<img src="screenshot/homepage3.png"> 
 </div>
 
