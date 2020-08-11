@@ -14,6 +14,12 @@
 </div>
 
 <div>
+	<h1>Detail View</h1>
+	<h3>You will be redirected to detail page after creating any album where you get deatils about the album,delete,update album details and add new song feature</h3>
+	<img src="screenshot/details.png">
+</div>
+
+<div>
 	<h1>Adding Songs </h1>
 	<h3>After creating an album ,go to detials of the album where "Add Songs" feature is available for adding songs to the respective album </h3>
 	<img src="screenshot/addsong.png">
