@@ -33,7 +33,7 @@
 
 <div>
 	<h1>Search </h1>
-	<h3>Search for any music album or songs using the "Search" feature provided in top navigation bar</h3>
+	<h3>Search for any music albums or songs using the "Search" feature provided in top navigation bar</h3>
 	<img src="screenshot/albumsearch.png">
 	<img src="screenshot/searchsong.png">
 </div>
