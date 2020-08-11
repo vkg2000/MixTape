@@ -1,0 +1,107 @@
+{% extends 'music/base.html' %}
+
+{% block body %}
+
+
+
+
+<h1 style="margin-top: 10px;margin-bottom: 5px;margin-left: 40%;">Search Results </h1>
+<h1 style="margin-top: 10px;margin-bottom: 5px;margin-left: 30px;">Albums</h1>
+<div class="row row-cols-1 row-cols-md-3 " >
+
+
+{% if all_albums %}
+{% for album in all_albums %}
+<div class="col mb-5">
+<div class="card  border-secondary mb-3 "  style="width: 25rem; height: 38rem;">
+  <img class="clip1" src="{{album.album_logo.url}}" height= "65%"  class="card-img-top" alt="...">
+  <div class="card-body">
+    <h2 class="card-title"><strong>{{album.album_title}}</strong></h2>
+    <h3 class="card-title">{{album.artist}}</h3>
+    <h4>
+    <a href="{% url 'music:detail' album.id %}" class="btn btn-primary">View Details</a>
+    <a href="{% url 'music:album-delete' album.id %}" ><img class="clip2"  src="../../static/music/images/delete.png"/></a>
+    <a href="{% url 'music:fav_album' album.id %}" >
+    {% if album.is_fav %}
+      <img class="clip2" src="../../static/music/images/fav.jpg"/>
+    {% else %}
+      <img class="clip2" src="../../static/music/images/star.png"/>
+    {% endif %}
+    </a>
+</h4>
+  </div>
+</div>
+</div>
+{% endfor %}
+{% else %}
+<h2 style="margin-top: 10px;margin-bottom: 5px;margin-left: 40px; color: red;text-decoration: line-through;text-shadow: 2px 2px 5px red;">No Albums Matched !!!!!</h2>
+{% endif %}
+</div>
+
+<h1 style="margin-top: 10px;margin-bottom: 5px;margin-left: 30px;">Songs</h1>
+{% if all_songs %}
+<table class="table table-responsive-sm " style="margin-top: 30px !important;margin-left: 30px !important;">
+  <thead>
+
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Album</th>
+      <th scope="col">Audio File</th>
+      <th scope="col">File Type</th>
+      <th scope="col">Favourite &nbsp</th>
+      <th scope="col">&nbsp &nbsp Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for song in all_songs %}
+    <tr>
+
+      <th scope="row">{{ song.song_title }}</th>
+
+      <td>
+        &nbsp
+        <a target="_blank" href="{% url 'music:detail' song.album.id %}">
+          {{ song.album.album_title }}
+        </a>
+      </td>
+
+      <td>
+        &nbsp
+        <a target="_blank" href="{{ song.audio_file.url }}">
+          <button type="button" class="btn btn-success btn-sm">&nbsp Play &nbsp 
+          </button>
+        </a>
+      </td>
+
+      <td>
+        &nbsp
+          {{ song.file_type}}
+        </a>
+      </td>
+
+      <td>  
+        {% if song.is_fav %}
+          <a href="{% url 'music:fav' song.id %}" ><img class="clip2"   src="../../static/music/images/fav.jpg"/></a>
+        {% else %}
+          <a href="{% url 'music:fav' song.id %}" ><img class="clip2"   src="../../static/music/images/star.png"/></a>
+        {% endif %}
+      </td>
+
+      <td>
+        &nbsp
+        <a target="_blank" href="{% url 'music:delete_song' song.album.id song.id %}">
+          <button type="button" class="btn btn-danger btn-sm">&nbsp Delete &nbsp 
+          </button>
+        </a>
+      </td>
+
+    </tr>
+   {% endfor %}   
+  </tbody>
+</table>
+{% else %}
+<h2 style="margin-top: 10px;margin-bottom: 5px;margin-left: 30px; color: red;text-decoration: line-through;text-shadow: 2px 2px 5px red;">No Songs Matched !!!!!</h2>
+{% endif %}
+
+{% endblock %}
+

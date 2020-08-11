@@ -1,0 +1,73 @@
+body{
+	background: white url("images/background.jpg");
+}
+
+.navbar{
+	border-radius: 0;
+}
+
+.navbar-brand{
+	font-family: 'Satisfy',cursive;
+}
+
+.navform{
+	margin-bottom: -3px;
+}
+
+.card {
+        margin: 0 auto;
+        float: none;
+        margin-top: 20px
+}
+
+.clip1{
+	margin: 10px;
+}
+
+.clip2{
+	width: 30px;
+	height: 30px;
+	margin-left: 10px;
+
+}
+
+.card1{
+	margin-left: 20px !important;
+}
+
+.container div{ 
+    float: left;
+}
+
+.cardtext{
+	margin-left: 30px;
+}
+
+.table{
+	width: 80%;
+    margin: 0 auto !important;
+    background-color: white;
+    border-style: solid;
+    border-color: #EBECEE;
+    border-width: 1px;
+}
+
+.cardbtn{
+	margin-left: 30px;
+	margin-bottom: -10px;
+}
+
+.cover{
+	height: 60%;
+	width: 100%;
+}
+
+.floatleft{ 
+    float: left;
+}
+
+.floatright{ 
+    float: right;
+    width: 40px;
+    height: 40px;
+}

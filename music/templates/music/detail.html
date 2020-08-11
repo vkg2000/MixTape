@@ -1,0 +1,77 @@
+{% extends 'music/base.html' %}
+
+{% block title %}MixTape | Album Details
+{% endblock %}
+
+
+{% block body %}
+
+
+<div class="card mb-3" style="max-width: 740px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{album.album_logo.url}}" class="card-img clip1" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+    <h2 class="card-title cardtext"><strong>Album :{{album.album_title}}</strong></h2>
+    <h3 class="card-title cardtext">Artist : {{album.artist}}</h3>
+    <h3 class="card-title cardbtn">Year : {{album.year}}</h3>
+    <br>
+    <br>
+    <a href="{% url 'music:song-add' %}" class="btn btn-primary cardtext">Add New Song</a>
+     <a href="{% url 'music:album-update' album.id %}" class="btn btn-primary cardtext">Update</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+  	<tr>
+  	<th><h1>All Songs </h1></th>
+  </tr>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Audio File</th>
+      <th scope="col">Favourite &nbsp</th>
+      <th scope="col">&nbsp &nbsp Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for song in album.song_set.all %}
+    <tr>
+      <th scope="row">{{ song.song_title }}</th>
+      <td>
+        &nbsp
+        <a target="_blank" href="{{ song.audio_file.url }}">
+          <button type="button" class="btn btn-success btn-sm">&nbsp Play &nbsp 
+          </button>
+        </a>
+      </td>
+      <td>
+        {% if song.is_fav %}
+          <a href="{% url 'music:fav' song.id %}" ><img class="clip2"   src="../../static/music/images/fav.jpg"/></a>
+        {% else %}
+          <a href="{% url 'music:fav' song.id %}" ><img class="clip2"   src="../../static/music/images/star.png"/></a>
+        {% endif %}
+      </td>
+      <td>
+        &nbsp
+        <a target="_blank" href="{% url 'music:song-delete' song.id %}">
+          <button type="button" class="btn btn-danger btn-sm">&nbsp Delete &nbsp 
+          </button>
+        </a>
+      </td>
+    </tr>
+   {% endfor %}   
+  </tbody>
+</table>
+
+
+
+
+
+
+
+{% endblock %}

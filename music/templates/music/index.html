@@ -1,0 +1,47 @@
+{% extends 'music/base.html' %}
+
+{% block body %}
+
+
+
+<div  >
+   <a  href="{% url 'music:album' %}"><img class="cover" src="../../static/music/images/cover.jpg"></a>
+<div class="jumbotron" style="background-color: #F8FDF8;">
+  <h1 class="display-4" style="margin-left: -5px;">Bring your tunes to life with MixTape</h1><br>
+  <p class="lead">It takes just a second to add your album and music to ,MixTape in sleek</p>
+  <hr class="my-4">
+  <p>The Best Music Library On Planet  </p>
+</div>
+
+
+
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 " >
+
+{% for album in all_albums %}
+<div class="col mb-5">
+<div class="card  border-secondary mb-3 "  style="width: 25rem; height: 38rem;">
+  <img class="clip1" src="{{album.album_logo.url}}" height= "65%"  class="card-img-top" alt="...">
+  <div class="card-body">
+    <h2 class="card-title"><strong>{{album.album_title}}</strong></h2>
+    <h3 class="card-title">{{album.artist}}</h3>
+    <h4>
+    <a href="{% url 'music:detail' album.id %}" class="btn btn-primary">View Details</a>
+    <a href="{% url 'music:album-delete' album.id %}" ><img class="clip2"  src="../../static/music/images/delete.png"/></a>
+    <a href="{% url 'music:fav_album' album.id %}" >
+    {% if album.is_fav %}
+      <img class="clip2" src="../../static/music/images/fav.jpg"/>
+    {% else %}
+      <img class="clip2" src="../../static/music/images/star.png"/>
+    {% endif %}
+    </a>
+</h4>
+  </div>
+</div>
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}
+

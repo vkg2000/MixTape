@@ -1,0 +1,86 @@
+{% extends 'music/base.html' %}
+
+{% block body %}
+
+
+<table class="table table-responsive-sm " style="margin-top: 30px !important;">
+  <thead>
+    <tr>
+    <th><h1>All Songs </h1></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th ><a href="{% url 'music:song-add' %}" class="btn btn-primary cardtext" style="float: right !important; margin-left: -50px;">Add New Song</a></th>
+  </tr>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col"> &nbsp &nbsp &nbspAlbum</th>
+      <th scope="col"> &nbsp &nbsp &nbspArtist</th>
+      <th scope="col">Audio File</th>
+      <th scope="col">File Type</th>
+      <th scope="col">Favourite &nbsp</th>
+      <th scope="col">&nbsp &nbsp  Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for song in all_songs %}
+    <tr>
+
+      <th scope="row">{{ song.song_title }}</th>
+
+      <td>
+        &nbsp
+        <a target="_blank" href="{% url 'music:detail' song.album.id %}">
+          {{ song.album.album_title }}
+        </a>
+      </td>
+
+
+      <td>
+        &nbsp
+        <a target="_blank" href="{% url 'music:detail' song.album.id %}">
+          {{ song.album.artist }}
+        </a>
+      </td>
+
+      <td>
+        &nbsp
+        <a target="_blank" href="{{ song.audio_file.url }}">
+          <button type="button" class="btn btn-success btn-sm">&nbsp Play &nbsp 
+          </button>
+        </a>
+      </td>
+
+      <td>
+        &nbsp
+          {{ song.file_type}}
+        </a>
+      </td>
+
+      <td>  
+        {% if song.is_fav %}
+          <a href="{% url 'music:fav' song.id %}" ><img class="clip2"   src="../../static/music/images/fav.jpg"/></a>
+        {% else %}
+          <a href="{% url 'music:fav' song.id %}" ><img class="clip2"   src="../../static/music/images/star.png"/></a>
+        {% endif %}
+      </td>
+
+      <td>
+        &nbsp
+        <a target="_blank" href="{% url 'music:song-delete' song.id %}">
+          <button type="button" class="btn btn-danger btn-sm">&nbsp Delete &nbsp 
+          </button>
+        </a>
+      </td>
+
+    </tr>
+   {% endfor %}   
+  </tbody>
+</table>
+
+
+
+{% endblock %}
+
