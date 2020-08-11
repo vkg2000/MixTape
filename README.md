@@ -15,31 +15,31 @@
 
 <div>
 	<h1>Detail View</h1>
-	<h3>You will be redirected to detail page after creating any album where you can get details about the album,"Update" details of your album ,and "Add New Songs".</h3>
+	<p>You will be redirected to detail page after creating any album where you can get details about the album,"Update" details of your album ,and "Add New Songs".</p>
 	<img src="screenshot/details.png">
 </div>
 
 <div>
 	<h1>Adding Songs </h1>
-	<h3>After creating an album ,go to detials of the album where "Add Songs" feature is available for adding songs to the respective album </h3>
+	<p>After creating an album ,go to detials of the album where "Add Songs" feature is available for adding songs to the respective album </p>
 	<img src="screenshot/addsong.png">
 </div>
 
 <div>
 	<h1>All Albums</h1>
-	<h3>"Album" feature in the navigation bar lets you browse your all albums where you can favourite,delete ,and go to detail page of any particular album</h3> 
+	<p>"Album" feature in the navigation bar lets you browse your all albums where you can favourite,delete ,and go to detail page of any particular album</p> 
 	<img src="screenshot/allalbum.png">
 </div>
 
 <div>
 	<h1>All Songs</h1>
-	<h3>Once any song has been added to an album, you can play,favourite and delete by using "Song" feature provided in the navigation bar</h3>
+	<p>Once any song has been added to an album, you can play,favourite and delete by using "Song" feature provided in the navigation bar</p>
 	<img src="screenshot/allsongs.png">
 </div>
 
 <div>
 	<h1>Search </h1>
-	<h3>Search for any music albums or songs using the "Search" feature provided in top navigation bar</h3>
+	<p>Search for any music albums or songs using the "Search" feature provided in top navigation bar</p>
 	<img src="screenshot/albumsearch.png">
 	<img src="screenshot/searchsong.png">
 </div>
