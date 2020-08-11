@@ -9,7 +9,7 @@
 
 <div>
 	<h1>Adding Albums </h1>
-	<h3>Start adding album to get started with the application by "Add Album" feature provided in the right-corner in navigation bar </h3>
+	<p>Start adding album to get started with the application by "Add Album" feature provided in the right-corner in navigation bar </p>
 	<img src="screenshot/addalbum.png">
 </div>
 
