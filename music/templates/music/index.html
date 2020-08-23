@@ -1,9 +1,5 @@
 {% extends 'music/base.html' %}
-
 {% block body %}
-
-
-
 <div  >
    <a  href="{% url 'music:album' %}"><img class="cover" src="../../static/music/images/cover.jpg"></a>
 <div class="jumbotron" style="background-color: #F8FDF8;">
@@ -12,13 +8,9 @@
   <hr class="my-4">
   <p>The Best Music Library On Planet  </p>
 </div>
-
-
-
 </div>
 
 <div class="row row-cols-1 row-cols-md-3 " >
-
 {% for album in all_albums %}
 <div class="col mb-5">
 <div class="card  border-secondary mb-3 "  style="width: 25rem; height: 38rem;">
@@ -42,6 +34,4 @@
 </div>
 {% endfor %}
 </div>
-
 {% endblock %}
-
